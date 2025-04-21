@@ -13,16 +13,16 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+        user: process.env.frontapply.chatgtp@gmail.com,
+        pass: process.env.Front1353!
       }
     });
 
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: process.env.bankskivor@frontapply.se,
       to: process.env.NOTIFY_TO,
-      subject: `✅ Faktura betald: #${invoiceNo}`,
-      text: `Faktura #${invoiceNo} har betalats med ${amount} kr den ${date}.`
+      subject: `✅ ${name} faktura betald: #${invoiceNo}`,
+      text: `Faktura #${invoiceNo} från ${name} har betalats med ${amount} kr den ${date}.`
     });
 
     return res.status(200).send("E-post skickat!");
